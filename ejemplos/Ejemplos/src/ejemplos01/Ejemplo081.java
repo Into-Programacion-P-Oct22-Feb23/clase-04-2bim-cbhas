@@ -1,17 +1,35 @@
 package ejemplos01;
 
-public class Ejemplo08 {
+import java.util.Scanner;
+
+public class Ejemplo081 {
 
     public static void main(String[] args) {
-        // 
+
+        Scanner entrada = new Scanner(System.in);
+
         String mensajeSuma;
         String mensajeSumaDos;
-        
-        mensajeSuma = obtenerTablaSumar(10, 9);
-        mensajeSumaDos = obtenerTablaMultiplicar(10, 9);
+        int opcion;
 
-        System.out.printf("%s\n", mensajeSuma);
-        System.out.printf("%s\n", mensajeSumaDos);
+        System.out.println("Ingrese 1, si desea trabajar con la suma\n"
+                + "Ingrese 2, si desea trabajar con la multiplicación");
+        opcion = entrada.nextInt();
+
+        if (opcion == 1) {
+            mensajeSuma = obtenerTablaSumar(10, 9);
+            System.out.println(mensajeSuma);
+        } else {
+            if (opcion == 2) {
+                mensajeSumaDos = obtenerTablaMultiplicar(10, 9);
+                System.out.println(mensajeSumaDos);
+
+            } else {
+                System.out.println("Error\nValor fuera de rango");
+            }
+
+        }
+
     }
 
     public static String obtenerTablaSumar(int limite, int tabla) {
